@@ -1,0 +1,146 @@
+[
+  {
+    "id": "comment-001",
+    "movieId": "movie-1",
+    "authorId": "6982180280088a76c5b720a7",
+    "authorName": "Alex Carter",
+    "content": "The soundtrack combined with the visuals makes this unforgettable.",
+    "createdAt": "2025-12-11T15:10:00.000Z"
+  },
+  {
+    "id": "comment-002",
+    "movieId": "movie-1",
+    "authorId": "698217da80088a76c5b720a5",
+    "authorName": "Alex Carter",
+    "content": "That docking scene is still one of the most intense moments in sci-fi.",
+    "createdAt": "2025-12-12T09:22:00.000Z"
+  },
+  {
+    "id": "comment-003",
+    "movieId": "movie-2",
+    "authorId": "6982180280088a76c5b720a7",
+    "authorName": "Alex Carter",
+    "content": "The layered dream logic is clever and incredibly well executed.",
+    "createdAt": "2025-12-12T18:41:00.000Z"
+  },
+  {
+    "id": "comment-004",
+    "movieId": "movie-2",
+    "authorId": "698217da80088a76c5b720a5",
+    "authorName": "Alex Carter",
+    "content": "That ending never gets old—still sparks debates years later.",
+    "createdAt": "2025-12-13T11:05:00.000Z"
+  },
+  {
+    "id": "comment-005",
+    "movieId": "movie-3",
+    "authorId": "6982180280088a76c5b720a7",
+    "authorName": "Alex Carter",
+    "content": "Every rewatch makes the philosophical themes hit harder.",
+    "createdAt": "2025-12-14T20:18:00.000Z"
+  },
+  {
+    "id": "comment-006",
+    "movieId": "movie-3",
+    "authorId": "698217da80088a76c5b720a5",
+    "authorName": "Alex Carter",
+    "content": "It’s wild how relevant this still feels decades later.",
+    "createdAt": "2025-12-15T08:50:00.000Z"
+  },
+  {
+    "id": "comment-007",
+    "movieId": "movie-4",
+    "authorId": "6982180280088a76c5b720a7",
+    "authorName": "Alex Carter",
+    "content": "The atmosphere and pacing are slow but incredibly immersive.",
+    "createdAt": "2025-12-16T14:13:00.000Z"
+  },
+  {
+    "id": "comment-008",
+    "movieId": "movie-4",
+    "authorId": "698217da80088a76c5b720a5",
+    "authorName": "Alex Carter",
+    "content": "Visually stunning and emotionally heavier than I expected.",
+    "createdAt": "2025-12-17T19:37:00.000Z"
+  },
+  {
+    "id": "comment-009",
+    "movieId": "movie-5",
+    "authorId": "6982180280088a76c5b720a7",
+    "authorName": "Alex Carter",
+    "content": "A rare sci-fi film that feels deeply personal and emotional.",
+    "createdAt": "2025-12-18T10:02:00.000Z"
+  },
+  {
+    "id": "comment-010",
+    "movieId": "movie-5",
+    "authorId": "698217da80088a76c5b720a5",
+    "authorName": "Alex Carter",
+    "content": "The concept of language shaping reality is fascinating.",
+    "createdAt": "2025-12-18T21:26:00.000Z"
+  },
+  {
+    "id": "comment-011",
+    "movieId": "movie-6",
+    "authorId": "6982180280088a76c5b720a7",
+    "authorName": "Alex Carter",
+    "content": "The scale is massive, yet the story stays grounded.",
+    "createdAt": "2025-12-19T13:45:00.000Z"
+  },
+  {
+    "id": "comment-012",
+    "movieId": "movie-6",
+    "authorId": "698217da80088a76c5b720a5",
+    "authorName": "Alex Carter",
+    "content": "That world-building is top-tier sci-fi craftsmanship.",
+    "createdAt": "2025-12-20T16:09:00.000Z"
+  },
+  {
+    "id": "comment-013",
+    "movieId": "movie-7",
+    "authorId": "6982180280088a76c5b720a7",
+    "authorName": "Alex Carter",
+    "content": "Unsettling in a quiet, intelligent way—perfect pacing.",
+    "createdAt": "2025-12-21T12:30:00.000Z"
+  },
+  {
+    "id": "comment-014",
+    "movieId": "movie-8",
+    "authorId": "698217da80088a76c5b720a5",
+    "authorName": "Alex Carter",
+    "content": "Nonstop tension—space never felt so hostile.",
+    "createdAt": "2025-12-22T09:55:00.000Z"
+  },
+  {
+    "id": "comment-015",
+    "movieId": "movie-9",
+    "authorId": "6982180280088a76c5b720a7",
+    "authorName": "Alex Carter",
+    "content": "Smart science mixed with humor makes this endlessly rewatchable.",
+    "createdAt": "2025-12-23T17:12:00.000Z"
+  },
+  {
+    "id": "comment-016",
+    "movieId": "movie-10",
+    "authorId": "698217da80088a76c5b720a5",
+    "authorName": "Alex Carter",
+    "content": "The ethical questions here are more interesting than the action.",
+    "createdAt": "2025-12-24T20:44:00.000Z"
+  },
+  {
+    "id": "comment-017",
+    "movieId": "69821d451dce82df64fffc05",
+    "authorId": "698217da80088a76c5b720a5",
+    "authorName": "Alex Carter",
+    "content": "Simple concept, but it feels grounded and sincere.",
+    "createdAt": "2026-02-03T16:12:00.000Z"
+  },
+  {
+    "id": "comment-018",
+    "movieId": "69821d451dce82df64fffc05",
+    "authorId": "6982180280088a76c5b720a7",
+    "authorName": "Alex Carter",
+    "content": "Feels like an early version of something that could grow nicely.",
+    "createdAt": "2026-02-03T16:18:00.000Z"
+  }
+]

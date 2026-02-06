@@ -1,0 +1,56 @@
+﻿{
+  "users": [
+    {
+      "id": "user-1",
+      "username": "alex",
+      "email": "alex@demo.com",
+      "password": "demo123"
+    },
+    {
+      "id": "user-2",
+      "username": "sam",
+      "email": "sam@demo.com",
+      "password": "demo123"
+    }
+  ],
+  "movies": [
+    {
+      "id": "movie-1",
+      "title": "The Last Horizon",
+      "year": 2021,
+      "genre": "Sci-Fi",
+      "poster": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200&auto=format&fit=crop",
+      "summary": "A deep-space salvage crew uncovers a signal that reshapes their understanding of time.",
+      "ownerId": "user-1",
+      "createdAt": "2025-11-12T10:24:00.000Z"
+    },
+    {
+      "id": "movie-2",
+      "title": "Golden Hour",
+      "year": 2019,
+      "genre": "Drama",
+      "poster": "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1200&auto=format&fit=crop",
+      "summary": "A photojournalist returns home and confronts the story she never told.",
+      "ownerId": "user-2",
+      "createdAt": "2025-12-02T18:55:00.000Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "comment-1",
+      "movieId": "movie-1",
+      "authorId": "user-2",
+      "authorName": "Sam Lee",
+      "content": "That final scene was stunning. The sound design was unreal.",
+      "createdAt": "2025-12-11T15:10:00.000Z"
+    },
+    {
+      "id": "comment-2",
+      "movieId": "movie-2",
+      "authorId": "user-1",
+      "authorName": "Alex Carter",
+      "content": "Loved the pacing and the color grading. Quiet but powerful.",
+      "createdAt": "2026-01-08T09:31:00.000Z"
+    }
+  ]
+}
