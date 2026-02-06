@@ -1,8 +1,13 @@
 import { Schema, model } from "mongoose";
 
 const movieSchema = new Schema({
-    title: { type: String, required: true },
-    year: { type: Number, required: true },
+    title: {
+        type: String,
+        required: [true, "Title is required"],
+        minLength: [2, "Title must be at least 2 characters long"],
+        maxLength: [10, "Title must be at most 10 characters long"],
+    },
+    year: { type: Number, required: [true, "Year is required"] },
     genre: { type: String, required: true },
     poster: { type: String, required: true },
     summary: { type: String},
