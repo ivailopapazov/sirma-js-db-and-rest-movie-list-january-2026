@@ -1,7 +1,9 @@
 ﻿import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 
-const API_BASE = 'http://localhost:5000/api'
+// const API_BASE = 'http://localhost:5000/api'
+const API_BASE = 'https://movie-list-453223622989.europe-west4.run.app/api'
+
 const STORAGE_KEYS = {
   session: 'ml_session',
 }

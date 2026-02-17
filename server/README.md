@@ -110,3 +110,9 @@ The client will also accept Mongo-style `_id` fields and map them to `id`.
 ## Seed Data
 
 Seed data is provided in `server/seed-data.json`. Import it into your database before running the client.
+
+## Docker Deployment
+authorize gcp with docker
+`gcloud auth configure-docker europe-west4-docker.pkg.dev`
+
+`docker push europe-west4-docker.pkg.dev/sirma-january-2026/sirma-january-2026/movie-list`
