@@ -1,9 +1,6 @@
 ﻿import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 
-// const API_BASE = 'http://localhost:5000/api'
-const API_BASE = 'https://movie-list-453223622989.europe-west4.run.app/api'
-
 const STORAGE_KEYS = {
   session: 'ml_session',
 }
@@ -31,7 +28,7 @@ const apiRequest = async (path, { method = 'GET', body, token } = {}) => {
   if (body) headers['Content-Type'] = 'application/json'
   if (token) headers.Authorization = `Bearer ${token}`
 
-  const response = await fetch(`${API_BASE}${path}`, {
+  const response = await fetch(`${import.meta.env.VITE_APP_API_URL}${path}`, {
     method,
     headers,
     body: body ? JSON.stringify(body) : undefined,
