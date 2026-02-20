@@ -22,7 +22,7 @@ const logger = winston.createLogger({
     ),
     transports: [
         new winston.transports.Console(),
-        new LoggingWinston(),
+        // new LoggingWinston(),
     ],
 });
 

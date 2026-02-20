@@ -16,13 +16,6 @@ movieController.get('/', async (req, res) => {
 movieController.post('/', async (req, res) => {
     const movieData = req.body;
 
-    // validate using zod schema
-    // try {
-    //     MovieSchema.parse(movieData);
-    // } catch (err) {
-    //     return res.status(400).json({ message: err.issues.at(0).message });
-    // }
-
     const userId = req.user?.id;
 
     try {
@@ -43,6 +36,23 @@ movieController.get('/:id', async (req, res) => {
     const movieId = req.params.id;
     const movie = await movieService.getOne(movieId);
     return res.send(movie);
+});
+
+movieController.delete('/:movieId', isAuthenticated, async (req, res) => {
+    const movieId = req.params.movieId;
+    const userId = req.user?.id;
+
+    try {
+        const deletedMovie = await movieService.remove(movieId, userId);
+        if (!deletedMovie) {
+            return res.status(404).json({ message: 'Movie not found or not authorized' });
+        }
+        logger.info(`Movie deleted with ID: ${movieId} by user ID: ${userId}`);
+        return res.status(200).json({ message: 'Movie deleted successfully' });
+    } catch (err) {
+        logger.error(`Failed to delete movie: ${err.message}`);
+        return res.status(400).json({ message: err.message });
+    }
 });
 
 export default movieController;

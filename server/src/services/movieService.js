@@ -11,3 +11,7 @@ export function create(movieData, userId) {
 export function getOne(movieId) {
     return Movie.findById(movieId);
 };
+
+export function remove(movieId, userId) {
+    return Movie.findOneAndDelete({ _id: movieId, ownerId: userId });
+}

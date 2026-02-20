@@ -5,7 +5,7 @@ const movieSchema = new Schema({
         type: String,
         required: [true, "Title is required"],
         minLength: [2, "Title must be at least 2 characters long"],
-        maxLength: [10, "Title must be at most 10 characters long"],
+        maxLength: [100, "Title must be at most 100 characters long"],
     },
     year: { type: Number, required: [true, "Year is required"] },
     genre: { type: String, required: true },
