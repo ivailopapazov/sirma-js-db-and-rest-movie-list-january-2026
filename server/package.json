@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "node --watch src/index.js",
+    "dev": "SET NODE_ENV=development && node --watch src/index.js",
     "build": "docker build . -t europe-west4-docker.pkg.dev/sirma-january-2026/sirma-january-2026/movie-list:latest",
     "push": "docker push europe-west4-docker.pkg.dev/sirma-january-2026/sirma-january-2026/movie-list:latest",
     "deploy:service": "gcloud run deploy movie-list --image=europe-west4-docker.pkg.dev/sirma-january-2026/sirma-january-2026/movie-list:latest --region=europe-west4 --platform=managed --allow-unauthenticated --min-instances=0 --max-instances=1",
@@ -20,6 +20,8 @@
   "dependencies": {
     "@google-cloud/logging-winston": "^6.0.1",
     "cors": "^2.8.6",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "firebase-admin": "^13.6.1",
     "firebase-functions": "^7.0.5",

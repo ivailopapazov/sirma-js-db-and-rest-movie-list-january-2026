@@ -10,14 +10,7 @@ const app = express();
 
 // Connect to MongoDB
 try {
-    // await mongoose.connect("mongodb://localhost:27017", {
-    //     dbName: "rest-api-design"
-    // });
-
-    await mongoose.connect("mongodb+srv://papazovivaylo_db_user:VrnPWLdJ4XusjiSO@cluster0.liwgmdh.mongodb.net/?appName=Cluster0", {
-        dbName: "rest-api-design"
-    });
-    
+    await mongoose.connect(process.env.NODE_ENV.trim() === "development" ? process.env.DB_CONNECTION_DEV : process.env.DB_CONNECTION_PROD);
 } catch (error) {
     console.error("Error connecting to the database", error);
 }
