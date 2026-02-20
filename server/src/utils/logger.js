@@ -5,7 +5,7 @@ const levels = {
     error: 0,
     warn: 1,
     info: 2,
-    notice: 3,
+    http: 3,
     verbose: 4,
     debug: 5,
     silly: 6
@@ -13,7 +13,7 @@ const levels = {
 
 const logger = winston.createLogger({
     levels,
-    level: 'notice',
+    level: 'info',
     format: winston.format.combine(
         winston.format.timestamp(),
         winston.format.printf(({ timestamp, level, message }) => {
