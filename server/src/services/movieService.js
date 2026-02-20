@@ -14,4 +14,8 @@ export function getOne(movieId) {
 
 export function remove(movieId, userId) {
     return Movie.findOneAndDelete({ _id: movieId, ownerId: userId });
-}
+};
+
+export function update(movieId, userId, movieData) {
+    return Movie.findOneAndUpdate({ _id: movieId, ownerId: userId }, movieData, { new: true });
+};

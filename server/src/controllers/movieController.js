@@ -55,4 +55,23 @@ movieController.delete('/:movieId', isAuthenticated, async (req, res) => {
     }
 });
 
+movieController.put('/:movieId', isAuthenticated, async (req, res) => {
+    const movieId = req.params.movieId;
+    const userId = req.user.id;
+    const movieData = req.body;
+
+    try {
+        const updatedMovie = await movieService.update(movieId, userId, movieData);
+        if (!updatedMovie) {
+            return res.status(404).json({ message: 'Movie not found or not authorized' });
+        }
+
+        logger.info(`Movie updated with ID: ${movieId} by user ID: ${userId}`);
+        return res.status(200).json(updatedMovie);
+    } catch (err) {
+        logger.error(`Failed to update movie: ${err.message}`);
+        return res.status(400).json({ message: err.message });
+    }
+});
+
 export default movieController;
