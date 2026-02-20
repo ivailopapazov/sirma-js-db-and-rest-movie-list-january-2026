@@ -1,7 +1,15 @@
 import Movie from "../models/Movie.js";
 
-export function getAll() {
-    return Movie.find({});
+export function getAll(filter = {}) {
+    let query = Movie.find();
+
+    if (filter.search) {
+        const searchRegex = new RegExp(filter.search, 'i');
+        query = query.find({ title: { $regex: searchRegex } });
+        // query = query.or([{ title: { $regex: searchRegex } }, { description: { $regex: searchRegex } }]);
+    }
+
+    return query;
 };
 
 export function create(movieData, userId) {

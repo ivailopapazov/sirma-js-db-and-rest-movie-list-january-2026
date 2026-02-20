@@ -98,7 +98,7 @@ const api = {
   register: (payload) => apiRequest('/auth/register', { method: 'POST', body: payload }),
   login: (payload) => apiRequest('/auth/login', { method: 'POST', body: payload }),
   logout: (token) => apiRequest('/auth/logout', { method: 'POST', token }),
-  getMovies: () => apiRequest('/movies'),
+  getMovies: (filter = '') => apiRequest(`/movies${filter ? `?search=${filter}` : ''}`),
   getMovie: (id) => apiRequest(`/movies/${id}`),
   createMovie: (payload, token) =>
     apiRequest('/movies', { method: 'POST', body: payload, token }),
@@ -177,10 +177,10 @@ function App() {
     return () => clearTimeout(timer)
   }, [notice])
 
-  const loadMovies = async () => {
+  const loadMovies = async (filter = '') => {
     setLoading(true)
     try {
-      const data = await api.getMovies()
+      const data = await api.getMovies(filter)
       const items = Array.isArray(data) ? data : data?.data || []
       setMovies(items.map(normalizeMovie).filter(Boolean))
     } catch (error) {
@@ -409,6 +409,7 @@ function App() {
         currentUser={currentUser}
         onCreate={() => navigate('/create')}
         loading={loading}
+        onSearch={loadMovies}
       />
     )
   }
@@ -568,18 +569,38 @@ function Header({ currentUser, onLogout }) {
   )
 }
 
-function Home({ movies, currentUser, onCreate, loading }) {
+// const useDebounce = (value, callback, delay = 500) => {
+//   useEffect(() => {
+//     const handler = setTimeout(() => {
+//       if (callback) callback(value)
+//     }, delay)
+
+//     return () => {
+//       clearTimeout(handler)
+//     }
+//   }, [value, delay])
+// }
+
+
+function Home({ movies, currentUser, onCreate, loading, onSearch }) {
   const [query, setQuery] = useState('')
 
-  const filtered = useMemo(() => {
-    const normalized = query.trim().toLowerCase()
-    if (!normalized) return movies
-    return movies.filter(
-      (movie) =>
-        movie.title.toLowerCase().includes(normalized) ||
-        movie.genre.toLowerCase().includes(normalized),
-    )
-  }, [movies, query])
+  const debouncedSearch = useMemo(() => {
+    let timeoutId
+    return (value) => {
+      clearTimeout(timeoutId)
+      timeoutId = setTimeout(() => {
+        console.log('Searching for:', value)
+        onSearch(value)
+      }, 500)
+    }
+  }, [])
+
+  const searchHandler = (event) => {
+    const value = event.target.value
+    setQuery(value)
+    debouncedSearch(value)
+  }
 
   return (
     <section className="page">
@@ -615,7 +636,7 @@ function Home({ movies, currentUser, onCreate, loading }) {
             type="search"
             placeholder="Search by title or genre"
             value={query}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={searchHandler}
           />
         </div>
         <div className="pill">
@@ -625,11 +646,11 @@ function Home({ movies, currentUser, onCreate, loading }) {
 
       {loading ? (
         <div className="empty">Loading movies...</div>
-      ) : filtered.length === 0 ? (
+      ) : movies.length === 0 ? (
         <div className="empty">No movies match your search yet.</div>
       ) : (
         <div className="grid">
-          {filtered.map((movie) => (
+          {movies.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>

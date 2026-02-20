@@ -8,7 +8,7 @@ import logger from "../utils/logger.js";
 const movieController = Router({ mergeParams: true });
 
 movieController.get('/', async (req, res) => {
-    const movies = await movieService.getAll();
+    const movies = await movieService.getAll(req.query);
 
     return res.send(movies);
 });
