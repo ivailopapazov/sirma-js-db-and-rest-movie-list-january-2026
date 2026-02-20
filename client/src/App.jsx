@@ -389,8 +389,10 @@ function App() {
         { content: text.trim() },
         session.token,
       )
-      const payload = normalizeComment(data?.data || data)
+      const payload = normalizeComment(data?._doc || data)
+
       if (payload) {
+        payload.author = { _id: payload.authorId, username: payload.authorName }
         setActiveComments((prev) => [payload, ...prev])
       }
     } catch (error) {

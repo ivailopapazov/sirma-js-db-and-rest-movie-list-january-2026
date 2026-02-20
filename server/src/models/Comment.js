@@ -2,12 +2,12 @@ import { Schema, model } from "mongoose";
 
 const commentSchema = new Schema({
     content: { type: String, required: true },
-    movieId: {
+    movie: {
         type: Schema.Types.ObjectId,
         ref: 'Movie',
         required: true,
     },
-    userId: {
+    author: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true,
